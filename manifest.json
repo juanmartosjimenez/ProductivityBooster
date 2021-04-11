@@ -1,0 +1,32 @@
+{
+    "name": "Productivity Extension",
+    "description": "An extension designed to make you more productive. All you have to do is add a todo list and a list of websites that hinder your productivity and the plugin will do its best to keep you on track.",
+    "version": "1.0",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js"
+    },
+    "permissions": ["storage", "activeTab", "scripting"],
+    "content_scripts": [
+        {
+            "matches": ["https://www.nytimes.com/"],
+            "run_at": "document_idle",
+            "js": ["contentScript.js"]
+        }
+    ],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "/images/get_started16.png",
+            "32": "/images/get_started32.png",
+            "48": "/images/get_started48.png",
+            "128": "/images/get_started128.png"
+        }
+    },
+    "icons": {
+        "16": "/images/get_started16.png",
+        "32": "/images/get_started32.png",
+        "48": "/images/get_started48.png",
+        "128": "/images/get_started128.png"
+    }
+}
