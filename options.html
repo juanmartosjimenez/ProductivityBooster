@@ -2,20 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/options.css">
     <title>Options</title>
 </head>
 <body>
 <!-- added stuff -->
-<h2 style="text-align: center;"><strong>Productivity Booster</strong></h2>
-<p>&nbsp;</p>
-<p style="text-align: center;"><strong>Please insert any website that hinders your productivity here:&nbsp;</strong></p>
-<p style="text-align: center;">&nbsp;</p>
+<h2 class="title"><strong>Productivity Booster</strong></h2>
+<p>&nbsp</p>
+<p class="title"><strong>Please insert any website that hinders your productivity here:&nbsp;</strong></p>
 
-<!-- paste here -->
+<!-- Add/Remove Array code -->
+<div class="websiteAdd">
+    <div>
+        <label for='t1' class="title"></label><input type=text id='t1'>
+        <button id="addButton" class="title">Add</button>
+    </div>
+</div>
 
-<input type=text style="text-align: center;" id='t1'>
-<button id="addButton" style="text-align: center;">Add</button>
-<div id=display style="text-align: center;"></div>
+<!-- Display array contents code -->
+<div id="display" class="title"></div>
+
+<p class="title"><strong>Please insert any things you need to do here:&nbsp;</strong></p>
+
+<!-- Add/Remove to-do list code -->
+<div class="websiteAdd">
+    <div>
+        <label for='itemTodo' class="title"></label><input type=text width=10 id='itemTodo'>
+        <label for='timeTodo' class="title"></label><input type=number width=10 id='timeTodo'>
+        <button id="addTodo" class="title">Add to Todo List</button>
+    </div>
+</div>
+
+<!-- Display dict contents code -->
+<div id="displayTodo" class="title"></div>
+
 <script src="options.js"></script>
+
 </body>
 </html>

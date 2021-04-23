@@ -1,0 +1,27 @@
+#addButton {
+    align-content: center;
+    text-align: center;
+    margin: auto;
+}
+
+#t1 {
+    margin: auto;
+}
+
+body {
+    background-color: mediumvioletred;
+}
+
+#display {
+    align-content: center;
+    text-align: center;
+}
+
+.websiteAdd {
+    display:flex;
+    justify-content: center;
+}
+
+.title {
+    text-align: center;
+}
