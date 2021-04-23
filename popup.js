@@ -5,19 +5,25 @@ document.getElementById("options").addEventListener("click", () =>{
     chrome.tabs.create({'url': "/options.html"});
 });
 
-document.onload = function () {
-    let linkList = document.getElementById("link-list");
-    let newItem = document.createElement('dt');
-    newItem.appendChild(document.createTextNode("test"));
-    linkList.appendChild(newItem);
+chrome.storage.onChanged = function () {
+    console.log("onload generating list");
+    chrome.storage.sync.get('urls', (result) =>{
+        let out = result['urls'];
+        console.log(out);
+        let linkList = document.getElementById("link-list");
+        out.forEach(function (item, index) {
+            console.log("adding link" + item);
+            let newItem = document.createElement('dt');
+            newItem.appendChild(document.createTextNode(item));
+            linkList.appendChild(newItem);
+        });
+    });
+
+
 }
 
 function save(){
     let urls = ["nytimes", "marca"];
     chrome.storage.sync.set({'urls': urls});
-    chrome.storage.sync.get('urls', (result) => {
-        console.log(result);
-        alert(result['urls']);
-    });
 }
 
