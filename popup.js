@@ -7,27 +7,29 @@ document.getElementById("options").addEventListener("click", () =>{
 });
 
 function generate() {
-    function appendList(out, typeList){
+    console.log("onload generating list");
+    chrome.storage.sync.get('urls', (result) =>{
+        let out = result['urls'];
         console.log(out);
-        let linkList = document.getElementById(typeList);
+        let linkList = document.getElementById("link-list");
         out.forEach(function (item, index) {
-            console.log("adding item " + item);
+            console.log("adding link" + item);
             let newItem = document.createElement('dt');
             newItem.appendChild(document.createTextNode(item));
             linkList.appendChild(newItem);
         });
-    }
-    console.log("onload generating list");
-    chrome.storage.sync.get('urls', (result) =>{
-        let out = result['urls'];
-        appendList(out, 'link-list');
-
     });
 
     chrome.storage.sync.get('todoList', (result) =>{
         let out = result['todoList'];
         console.log(out);
-        appendList(out, "todo-list")
+        let linkList = document.getElementById("link-list");
+        for (const [key, value] of Object.entries(out)){
+            console.log("adding key " + key + " adding item " + value);
+            let newItem = document.createElement('dt');
+            newItem.appendChild(document.createTextNode(key + " Time " + value));
+            linkList.appendChild(newItem);
+        }
     });
 
 

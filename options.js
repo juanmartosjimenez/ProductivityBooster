@@ -18,16 +18,25 @@ function AddWebsite(){
     chrome.storage.sync.set({"urls": webData});
     document.getElementById('t1').value = ''; // Making the text box blank
     displayWebsites(); // displaying the array elements
+    //setting event listeners
+}
+
+function RemoveWebsite() {
+    //webData.splice(document.getElementById().value, 1);
+    displayWebsites();
 }
 
 function displayWebsites() {
     let str = '';
-    str = 'current elements in webData array : ' + webData.length + '<br>';
     for (let i = 0; i < webData.length; i++) {
-        str += i + ':' + webData[i] + "<br >";  // adding each element with key number to variable
+        str +=  webData[i] + '<button id="website' + i + '" value=' + i + '>X</button><br>';  // adding each element with key number to variable
     }
-
     document.getElementById('display').innerHTML = str; // Display the elements of the array
+    // set event listeners for recently created buttons
+    for (let a = 0; a < webData.length; a++) {
+        let website = webData[a] + a;
+        document.getElementById(website).addEventListener("click", RemoveWebsite);
+    }
 }
 
 function AddTodo(){
