@@ -23,7 +23,7 @@ function generate() {
     chrome.storage.sync.get('todoList', (result) =>{
         let out = result['todoList'];
         console.log(out);
-        let linkList = document.getElementById("link-list");
+        let linkList = document.getElementById("todo-list");
         for (const [key, value] of Object.entries(out)){
             console.log("adding key " + key + " adding item " + value);
             let newItem = document.createElement('dt');
