@@ -21,3 +21,10 @@ function setPageBackgroundColor() {
         document.body.style.backgroundColor = color;
     });
 }
+
+document.getElementById("options").addEventListener("click", () =>{
+    console.log("options_button clicked");
+    window.location.href = "../options.html"
+});
+
+
