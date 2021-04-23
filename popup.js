@@ -5,7 +5,7 @@ document.getElementById("options").addEventListener("click", () =>{
     chrome.tabs.create({'url': "/options.html"});
 });
 
-chrome.storage.onChanged = function () {
+chrome.storage.onClick = function () {
     console.log("onload generating list");
     chrome.storage.sync.get('urls', (result) =>{
         let out = result['urls'];
