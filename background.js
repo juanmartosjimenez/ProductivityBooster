@@ -1,17 +1,9 @@
-let color = '#3aa757';
+async function getCurrentTab() {
+  let queryOptions = { active: true, currentWindow: true };
+  let [tab] = await chrome.tabs.query(queryOptions);
+  console.log(tab);
+  return tab;
+}
 
-chrome.runtime.onInstalled.addListener(() => {
-  chrome.storage.sync.set({ color });
-  console.log('Default background color set to %cgreen', `color: ${color}`);
-});
+let test = await getCurrentTab();
 
-
-chrome.storage.onChanged.addListener(function (changes, namespace) {
-  for (let [key, { oldValue, newValue }] of Object.entries(changes)) {
-    console.log(
-        `Storage key "${key}" in namespace "${namespace}" changed.`,
-        `Old value was "${oldValue}", new value is "${newValue}".`
-    );
-    console.log()
-  }
-});

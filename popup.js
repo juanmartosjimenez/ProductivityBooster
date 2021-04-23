@@ -1,13 +1,16 @@
 // Initialize button with user's preferred color
 
 document.getElementById("options").addEventListener("click", () =>{
-    /*
     console.log("options_button clicked");
     chrome.tabs.create({'url': "/options.html"});
-     */
-    save();
 });
 
+document.onload = function () {
+    let linkList = document.getElementById("link-list");
+    let newItem = document.createElement('dt');
+    newItem.appendChild(document.createTextNode("test"));
+    linkList.appendChild(newItem);
+}
 
 function save(){
     let urls = ["nytimes", "marca"];
