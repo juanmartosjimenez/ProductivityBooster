@@ -2,10 +2,9 @@
 /* Include the padding and border in an element's total width and height */
 
 body {
-    margin: 0;
-    min-width: 250px;
-    background-image: url('https://images.unsplash.com/photo-1514474959185-1472d4c4e0d4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80');
-    backdrop-filter: blur(688);
+    background-image: url("/images/pencils.jpeg");
+    background-position: 50% 50%;
+    background-repeat: repeat;
 }
 
 * {
@@ -13,7 +12,7 @@ body {
 }
 
 h2 {
-    background-color: black;
+    background-color: #E7F2F8;
 }
 
 /* Remove margins and padding from the list */
@@ -86,8 +85,10 @@ ul li.checked::before {
 /* Style the header */
 .header {
     /*background-color: #f44336;*/
-    padding: 30px 40px;
-    color: white;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 10px;
+    color: black;
     text-align: center;
 }
 
@@ -128,3 +129,16 @@ input {
 }
 
 
+.myList{
+    margin-top: 50px;
+    margin-right: 5%;
+    margin-left: 5%;
+    padding-bottom: 10px;
+    background-color: salmon;
+    border-radius: 10px;
+}
+
+.list-title{
+    padding: 10px;
+    border-radius: 5px;
+}
