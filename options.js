@@ -1,11 +1,36 @@
-document.getElementById("addButton").addEventListener("click", AddWebsite);
-document.getElementById("addTodo").addEventListener("click", AddTodo);
+window.onload = function() {
+    document.getElementById("addBtn").addEventListener("click", AddWebsite);
+    document.getElementById("addTodoBtn").addEventListener("click", AddTodo);
+}
 
-const webData = []; // creating array for Websites
-const todoData = {}; //creating dictionary for todoItems
+
+function GetUrls() {
+    let retVal = [];
+    chrome.storage.sync.get('urls', (result) => {
+        let out = result['urls'];
+        if (typeof(out) != 'undefined'){
+            retVal = out;
+        }
+    });
+    return retVal;
+}
+
+function GetTodo() {
+    let retVal = {};
+    chrome.storage.sync.get('urls', (result) => {
+        let out = result['urls'];
+        if (typeof(out) != 'undefined'){
+            retVal = out;
+        }
+    });
+    return retVal;
+}
+
+const webData = GetUrls(); // creating array for Websites
+const todoData = GetTodo(); //creating dictionary for todoItems
 
 function AddWebsite(){
-    let curWebsite = document.getElementById('t1').value;
+    let curWebsite = document.getElementById('myInput').value;
     if (webData.includes(curWebsite)) {
         let index = webData.indexOf(curWebsite);
         if (index > -1) {
@@ -16,27 +41,19 @@ function AddWebsite(){
         webData.push(curWebsite); // adding element to array
     }
     chrome.storage.sync.set({"urls": webData});
-    document.getElementById('t1').value = ''; // Making the text box blank
+    document.getElementById('myInput').value = ''; // Making the text box blank
     displayWebsites(); // displaying the array elements
-    //setting event listeners
 }
 
-function RemoveWebsite() {
-    //webData.splice(document.getElementById().value, 1);
-    displayWebsites();
-}
+
 
 function displayWebsites() {
     let str = '';
     for (let i = 0; i < webData.length; i++) {
-        str +=  webData[i] + '<button id="website' + i + '" value=' + i + '>X</button><br>';  // adding each element with key number to variable
+        str += '<li>' + webData[i] +  '</li>';  // adding each element with key number to letiable
     }
-    document.getElementById('display').innerHTML = str; // Display the elements of the array
+    document.getElementById('myUL').innerHTML = str; // Display the elements of the array
     // set event listeners for recently created buttons
-    for (let a = 0; a < webData.length; a++) {
-        let website = webData[a] + a;
-        document.getElementById(website).addEventListener("click", RemoveWebsite);
-    }
 }
 
 function AddTodo(){
@@ -56,11 +73,14 @@ function AddTodo(){
 
 function displayTodo() {
     let str = '';
-    str = 'current elements in todoData array : ' + '<br>';
+    str = '';
     for(let i in todoData) {
-        str += i + ": " + todoData[i] + "<br />";
+        str += '<li>' + 'item:' + i + ' expected time:' + todoData[i]  +  '</li>';
     }
 
-    document.getElementById('displayTodo').innerHTML = str; // Display the elements of the array
+    document.getElementById('myTodoUL').innerHTML = str; // Display the elements of the array
 }
+
+// copied shit
+
 
