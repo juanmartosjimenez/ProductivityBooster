@@ -19,7 +19,7 @@ function generate() {
     chrome.storage.sync.get('urls', (result) =>{
         let out = result['urls'];
         let linkList = document.getElementById("link-list");
-        if (typeof(out) == 'undefined'){
+        if (typeof(out) == 'undefined' || out.length === 0){
             console.log("no links added");
             let newItem = document.createElement('dt');
             newItem.appendChild(document.createTextNode("No blocked websites yet!"));
@@ -37,7 +37,7 @@ function generate() {
     chrome.storage.sync.get('todoList', (result) =>{
         let out = result['todoList'];
         let linkList = document.getElementById("todo-list");
-        if (typeof(out) == 'undefined'){
+        if (typeof(out) == 'undefined' || Object.keys(out).length === 0){
             console.log("No items added");
             let newItem = document.createElement('dt');
             newItem.appendChild(document.createTextNode("Congratulations you have no todo items!"));
