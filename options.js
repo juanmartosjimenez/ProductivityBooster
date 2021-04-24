@@ -42,7 +42,7 @@ function displayWebsites() {
 function AddTodo(){
     let todoItem = document.getElementById('itemTodo').value;
     let todoTime = document.getElementById('timeTodo').value;
-    if (todoTime < .1 || todoItem == "") {
+    if (todoTime < .1 || todoItem === "") {
         alert("Please enter valid time (greater that .1 hours) and valid todo item.")
     }
     else {
