@@ -16,31 +16,6 @@ window.onload = function() {
     });
 }
 
-function GetUrls() {
-    let retVal = [];
-    chrome.storage.sync.get('urls', (result) => {
-        let out = result['urls'];
-        if (typeof(out) != 'undefined'){
-            retVal = out;
-        }
-    });
-    return retVal;
-}
-
-function GetTodo() {
-    let retVal = {};
-    chrome.storage.sync.get('urls', (result) => {
-        let out = result['urls'];
-        if (typeof(out) != 'undefined'){
-            retVal = out;
-        }
-    });
-    return retVal;
-}
-
-const webData = GetUrls(); // creating array for Websites
-const todoData = GetTodo(); //creating dictionary for todoItems
-
 function AddWebsite(){
     chrome.storage.sync.get('urls', (result) => {
         let out = result['urls'];
@@ -93,7 +68,6 @@ function AddTodo(){
             else {
                 out[todoItem] = todoTime;
             }
-
             chrome.storage.sync.set({"todoList": out});
             document.getElementById('timeTodo').value = ''; // Making the text box blank
             document.getElementById('itemTodo').value = ''; // Making the text box blank
