@@ -20,10 +20,10 @@ function generate() {
     console.log("onload generating list");
     chrome.storage.sync.get('urls', (result) =>{
         let out = result['urls'];
-        let linkList = document.getElementById("link-list");
+        let linkList = document.getElementById("myUL");
         if (typeof(out) == 'undefined' || out.length === 0){
             console.log("no links added");
-            let newItem = document.createElement('dt');
+            let newItem = document.createElement('li');
             newItem.appendChild(document.createTextNode("No blocked websites yet!"));
             linkList.appendChild(newItem);
         } else {
@@ -38,10 +38,10 @@ function generate() {
 
     chrome.storage.sync.get('todoList', (result) =>{
         let out = result['todoList'];
-        let linkList = document.getElementById("todo-list");
+        let linkList = document.getElementById("myTodoUL");
         if (typeof(out) == 'undefined' || Object.keys(out).length === 0){
             console.log("No items added");
-            let newItem = document.createElement('dt');
+            let newItem = document.createElement('li');
             newItem.appendChild(document.createTextNode("Congratulations you have no todo items!"));
             linkList.appendChild(newItem);
         } else {
