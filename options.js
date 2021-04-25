@@ -76,7 +76,9 @@ async function AddWebsite(){
         let out = result['urls'];
         if (typeof(out) != 'undefined'){
             let curWebsite = document.getElementById('myInput').value;
-            if (out.includes(curWebsite)) {
+            if (curWebsite === ""){
+
+            } else if (out.includes(curWebsite)) {
                 let index = out.indexOf(curWebsite);
                 if (index > -1) {
                     out.splice(index, 1);
