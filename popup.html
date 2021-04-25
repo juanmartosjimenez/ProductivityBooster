@@ -6,24 +6,23 @@
 </head>
 <body>
 <script src="popup.js"></script>
-<button id="options"> Add Pages/TODO Items</button>
+<button id="options" class="helperBtn"> Add Pages/TODO Items</button>
 
-<div id="blocked_sites">
-    <h2>Blocked sites</h2>
-    <div id="sites">
-        <dl id="link-list">
-        </dl>
-    </div>
+<div id="myUrls" class="header myList">
+    <h2 class="list-title">Blocked Sites</h2>
 </div>
 
-<div id="todo-items">
-    <h2>Todo Items</h2>
-    <div id="todo">
-        <dl id="todo-list">
-        </dl>
-    </div>
+<ul id="myUL">
+</ul>
+
+<div id="myTodo" class="header myList">
+    <h2 class="list-title">To-Do List</h2>
 </div>
-<button id="reset-data">Click to reset storage</button>
+
+<ul id="myTodoUL">
+</ul>
+
+<button id="reset-data" class="helperBtn">Click to reset storage</button>
 
 </body>
 </html>

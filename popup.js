@@ -10,6 +10,8 @@ window.onload= function(){
     document.getElementById("reset-data").addEventListener("click", ()=>{
         console.log("Storage reset");
         chrome.storage.sync.clear();
+        window.location.href="popup.html";
+        chrome.tabs.reload();
     });
 }
 
@@ -25,12 +27,12 @@ function generate() {
             newItem.appendChild(document.createTextNode("No blocked websites yet!"));
             linkList.appendChild(newItem);
         } else {
+            let str = "";
             out.forEach(function (item, index) {
                 console.log("adding link " + item);
-                let newItem = document.createElement('dt');
-                newItem.appendChild(document.createTextNode(item));
-                linkList.appendChild(newItem);
+                str += '<li>' + out[index] +  '</li>';
             });
+            document.getElementById('myUL').innerHTML = str;
         }
     });
 
@@ -43,12 +45,12 @@ function generate() {
             newItem.appendChild(document.createTextNode("Congratulations you have no todo items!"));
             linkList.appendChild(newItem);
         } else {
+            let str = '';
             for (const [key, value] of Object.entries(out)){
                 console.log("adding key " + key + " adding item " + value);
-                let newItem = document.createElement('dt');
-                newItem.appendChild(document.createTextNode(key + " Time " + value));
-                linkList.appendChild(newItem);
+                str += '<li>' + 'item:' + key + ' expected time:' + value  +  '</li>';
             }
+            document.getElementById('myTodoUL').innerHTML = str;
         }
 
     });

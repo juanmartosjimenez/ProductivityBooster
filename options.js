@@ -81,6 +81,5 @@ function displayTodo() {
     document.getElementById('myTodoUL').innerHTML = str; // Display the elements of the array
 }
 
-// copied shit
 
 
