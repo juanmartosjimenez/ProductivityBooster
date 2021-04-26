@@ -18,7 +18,7 @@ async function render() {
     });
     chrome.storage.sync.get('todoList', (result) => {
         let out = result['todoList'];
-        if (typeof(out) != 'undefined'){
+        if (typeof(out) != 'undefined') {
             displayTodo(out);
         }
     });
