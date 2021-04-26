@@ -1,6 +1,22 @@
 // Start of Real stuff
 window.onload = function () {
     generate();
+
+    chrome.storage.sync.get('grind', (result)=>{
+        let button = document.getElementById('mainGrind');
+        let bod = document.getElementById("main");
+        let out = result['grind'];
+        if (typeof(out) == 'undefined'){
+            chrome.storage.sync.set({'grind': false});
+            button.innerHTML = "Grind Mode: <br> Off";
+        } else if ( out === true){
+            bod.className = "bodyColor";
+            button.innerHTML = "Grind Mode: <br> On";
+        } else {
+            button.innerHTML = "Grind Mode: <br> Off";
+        }
+
+    });
     document.getElementById("options").addEventListener("click", () => {
         console.log("options_button clicked");
         chrome.tabs.create({'url': "/options.html"});
@@ -14,20 +30,25 @@ window.onload = function () {
     });
 
     document.getElementById("mainGrind").addEventListener("click", () => {
-        let bod = document.getElementById("main");
-        let button = document.getElementById("mainGrind");
-        if (button.value == "off") {
-            bod.className = "bodyColor";
-            button.innerHTML = "Grind Mode: <br> On";
-            button.value = "on";
-            chrome.storage.sync.set({'grind': true});
-        } else if (button.value == "on") {
-            bod.className = "none";
-            document.getElementsByClassName("myListFun").className = "myList";
-            button.innerHTML = "Grind Mode: <br> Off";
-            button.value = "off";
-            chrome.storage.sync.set({'grind': false});
-        }
+        chrome.storage.sync.get('grind', (result) => {
+            let out = result['grind'];
+            if (typeof(out) == 'undefined'){
+                out = false;
+            }
+            let bod = document.getElementById("main");
+            let button = document.getElementById("mainGrind");
+            if (out === false) {
+                bod.className = "bodyColor";
+                button.innerHTML = "Grind Mode: <br> On";
+                button.value = "on";
+                chrome.storage.sync.set({'grind': true});
+            } else if (out === true) {
+                bod.className = "none";
+                button.innerHTML = "Grind Mode: <br> Off";
+                button.value = "off";
+                chrome.storage.sync.set({'grind': false});
+            }
+        });
     });
 }
 
