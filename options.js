@@ -151,7 +151,7 @@ async function AddTodo(){
 }
 
 function parseTodo(key, val){
-    return 'item: ' + key + ' expected time: ' + val;
+    return key + ' for ' + val + 'hrs';
 }
 
 async function displayTodo(dictTodo) {

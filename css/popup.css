@@ -8,6 +8,7 @@ body {
 }
 
 .helperBtn {
+    cursor: pointer;
     background-color: #6BACD0;
     border-radius: 10px;
     margin-bottom: 10px;
@@ -30,7 +31,6 @@ ul {
 
 /* Style the list items */
 ul li {
-    cursor: pointer;
     position: relative;
     padding: 12px 8px 12px 40px;
     list-style-type: none;

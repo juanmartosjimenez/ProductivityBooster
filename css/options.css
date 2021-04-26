@@ -166,3 +166,10 @@ input {
     padding: 10px;
     border-radius: 5px;
 }
+
+#getting-started{
+    background-color: #6BACD0;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 5px;
+}

@@ -48,7 +48,7 @@ function generate() {
             let str = '';
             for (const [key, value] of Object.entries(out)){
                 console.log("adding key " + key + " adding item " + value);
-                str += '<li>' + 'item:' + key + ' expected time:' + value  +  '</li>';
+                str += '<li>' + key + ' for ' + value  + 'hrs'+  '</li>';
             }
             document.getElementById('myTodoUL').innerHTML = str;
         }
