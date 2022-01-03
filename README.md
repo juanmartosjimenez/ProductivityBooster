@@ -6,4 +6,4 @@ This project was designed and developed with my friend Liam Knowles. The goal of
 
 #### Project Demonstration
 
-<img src="Screen Shot 2021-05-19 at 2.24.43 PM.png" alt="drawing" width="200"/>
+<img src="Screen Shot 2021-05-19 at 2.24.43 PM.png" alt="drawing" width="500"/>
