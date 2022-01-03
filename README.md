@@ -14,8 +14,16 @@ Plugin options page to add sites to block and todo items.
 
 <img src="Screen Shot 2021-05-19 at 2.29.14 PM.png" alt="drawing" width="800"/>
 
-Message displayed when user attemps to access a site that has been blocked.
+Site displayed when user attemps to access a site that has been blocked.
 
 <img src="Screen Shot 2021-05-19 at 2.30.02 PM.png" alt="drawing" width="800"/>
 
 
+# Installation Instructions
+
+Download the plugin.zip file in the main github folder and unzip it.
+In the three vertical dots in the top right corner of chrome, go to “more tools”, then “extensions”.
+In the top right corner of the extensions menu, turn developer mode on.
+Click the Load Unpacked button and select the ProductivityBooster directory that you just unzipped
+In the puzzle piece on the chrome toolbar where you interact with other extensions you should now be able to use the extension.
+Enjoy!
