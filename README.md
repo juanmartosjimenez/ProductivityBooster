@@ -21,9 +21,9 @@ Site displayed when user attemps to access a site that has been blocked.
 
 # Installation Instructions
 
-Download the plugin.zip file in the main github folder and unzip it.
-In the three vertical dots in the top right corner of chrome, go to “more tools”, then “extensions”.
-In the top right corner of the extensions menu, turn developer mode on.
-Click the Load Unpacked button and select the ProductivityBooster directory that you just unzipped
-In the puzzle piece on the chrome toolbar where you interact with other extensions you should now be able to use the extension.
+1. Download the repository.
+2. In the three vertical dots in the top right corner of chrome, go to “more tools”, then “extensions”.
+3. In the top right corner of the extensions menu, turn developer mode on.
+4. Click the Load Unpacked button and select the ProductivityBooster repository that you just downloaded.
+5. In the puzzle piece on the chrome toolbar where you interact with other extensions you should now be able to use the extension.
 Enjoy!
