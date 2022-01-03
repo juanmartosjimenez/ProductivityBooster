@@ -6,4 +6,16 @@ This project was designed and developed with my friend Liam Knowles. The goal of
 
 #### Project Demonstration
 
+Plugin popup displayed on the left of the screenshot.
+
 <img src="Screen Shot 2021-05-19 at 2.24.43 PM.png" alt="drawing" width="800"/>
+
+Plugin options page to add sites to block and todo items.
+
+<img src="Screen Shot 2021-05-19 at 2.29.14 PM.png" alt="drawing" width="800"/>
+
+Message displayed when user attemps to access a site that has been blocked.
+
+<img src="Screen Shot 2021-05-19 at 2.30.02 PM.png" alt="drawing" width="800"/>
+
+
